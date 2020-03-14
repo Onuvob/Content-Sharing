@@ -10,6 +10,8 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
         <!-- Styles -->
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
         <style>
             html, body {
                 background-color: #fff;
@@ -80,19 +82,20 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+                <div class="text-center mt-5 mb-5 text-danger">
+                    <h1>You haven't created any post.!</h1>
                 </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="card text-center ml-5 mr-5">
+                    <div class="card-header">
+                        Content Header
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Content Boyd.With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="btn btn-primary">View Details</a>
+                    </div>
+                    <div class="card-footer">
+                        <span class="text-muted">created at: </span> 2 days ago
+                    </div>
                 </div>
             </div>
         </div>
