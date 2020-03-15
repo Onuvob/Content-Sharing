@@ -46,10 +46,6 @@
                 text-align: center;
             }
 
-            .title {
-                font-size: 84px;
-            }
-
             .links > a {
                 color: #636b6f;
                 padding: 0 25px;
@@ -60,13 +56,11 @@
                 text-transform: uppercase;
             }
 
-            .m-b-md {
-                margin-bottom: 30px;
-            }
+
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        <div class="flex-center position-ref">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -80,24 +74,76 @@
                     @endauth
                 </div>
             @endif
+        </div>
 
-            <div class="content">
-                <div class="text-center mt-5 mb-5 text-danger">
-                    <h1>You haven't created any post.!</h1>
+        <div class="text-center mt-5 mb-5 text-danger">
+            <h1>No posts has been created yet!</h1>
+        </div>
+
+        <div class="content m-5">
+
+            <div class="card text-center ml-5 mr-5">
+                <div class="card-header bg-dark text-white">
+                    <h4>Content Header</h4>
                 </div>
-                <div class="card text-center ml-5 mr-5">
-                    <div class="card-header">
-                        Content Header
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text">Content Boyd.With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">View Details</a>
-                    </div>
-                    <div class="card-footer">
-                        <span class="text-muted">created at: </span> 2 days ago
-                    </div>
+                <div class="card-body">
+                    <p class="card-text">Content Boyd.With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">View Details</a>
+                </div>
+                <div class="card-footer">
+                    <span class="text-muted">created at: </span> 2 days ago
                 </div>
             </div>
         </div>
+
+        <div class="content m-5">
+
+            <div class="card text-center ml-5 mr-5">
+                <div class="card-header bg-dark text-white">
+                    <h4>Content Header</h4>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Content Boyd.With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">View Details</a>
+                </div>
+                <div class="card-footer">
+                    <span class="text-muted">created at: </span> 2 days ago
+                </div>
+            </div>
+        </div>
+
+        <div class="content m-5">
+
+            <div class="card text-center ml-5 mr-5">
+                <div class="card-header bg-dark text-white">
+                    <h4>Content Header</h4>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Content Boyd.With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">View Details</a>
+                </div>
+                <div class="card-footer">
+                    <span class="text-muted">created at: </span> 2 days ago
+                </div>
+            </div>
+        </div>
+
+        <div class="content m-5">
+
+            <div class="card text-center ml-5 mr-5">
+                <div class="card-header bg-dark text-white">
+                    <h4>Content Header</h4>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Content Boyd.With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">View Details</a>
+                </div>
+                <div class="card-footer">
+                    <span class="text-muted">created at: </span> 2 days ago
+                </div>
+            </div>
+        </div>
+
+
     </body>
 </html>
