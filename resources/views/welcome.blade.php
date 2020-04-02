@@ -76,73 +76,35 @@
             @endif
         </div>
 
-        <div class="text-center mt-5 mb-5 text-danger">
-            <h1>No posts has been created yet!</h1>
-        </div>
+        @if( count($posts) > 0)
 
-        <div class="content m-5">
+            @foreach($posts as $key => $post)
 
-            <div class="card text-center ml-5 mr-5">
-                <div class="card-header bg-dark text-white">
-                    <h4>Content Header</h4>
+                <div class="content m-5">
+
+                    <div class="card text-center ml-5 mr-5">
+                        <div class="card-header bg-dark text-white">
+                            <h4>{{ $post->title }}</h4>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">{{ $post->body }}</p>
+                            <a href="#" class="btn btn-primary">View Details</a>
+                        </div>
+                        <div class="card-footer">
+                            <span class="text-muted">created at: </span> {{ $post->created_at }}
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <p class="card-text">Content Boyd.With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">View Details</a>
-                </div>
-                <div class="card-footer">
-                    <span class="text-muted">created at: </span> 2 days ago
-                </div>
+
+            @endforeach
+
+        @else
+
+            <div class="text-center mt-5 mb-5 text-danger">
+                <h1>No posts has been created yet!</h1>
             </div>
-        </div>
 
-        <div class="content m-5">
-
-            <div class="card text-center ml-5 mr-5">
-                <div class="card-header bg-dark text-white">
-                    <h4>Content Header</h4>
-                </div>
-                <div class="card-body">
-                    <p class="card-text">Content Boyd.With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">View Details</a>
-                </div>
-                <div class="card-footer">
-                    <span class="text-muted">created at: </span> 2 days ago
-                </div>
-            </div>
-        </div>
-
-        <div class="content m-5">
-
-            <div class="card text-center ml-5 mr-5">
-                <div class="card-header bg-dark text-white">
-                    <h4>Content Header</h4>
-                </div>
-                <div class="card-body">
-                    <p class="card-text">Content Boyd.With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">View Details</a>
-                </div>
-                <div class="card-footer">
-                    <span class="text-muted">created at: </span> 2 days ago
-                </div>
-            </div>
-        </div>
-
-        <div class="content m-5">
-
-            <div class="card text-center ml-5 mr-5">
-                <div class="card-header bg-dark text-white">
-                    <h4>Content Header</h4>
-                </div>
-                <div class="card-body">
-                    <p class="card-text">Content Boyd.With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">View Details</a>
-                </div>
-                <div class="card-footer">
-                    <span class="text-muted">created at: </span> 2 days ago
-                </div>
-            </div>
-        </div>
+        @endif
 
 
     </body>

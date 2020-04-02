@@ -5,13 +5,14 @@ namespace App\Http\Controllers\Post;
 use App\Http\Controllers\Controller;
 use App\Model\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
 
-    public function index()
+    public function __construct()
     {
-        //
+        $this->middleware('auth');
     }
 
 
@@ -22,9 +23,19 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-        Post::create($request->all());
+        $post = new Post;
 
-        return view('home')->with('success', 'Post has been created successfully!');
+        $post->title = $request->title;
+        $post->body = $request->body;
+        $post->author_id =  Auth::id();
+
+        $post->save();
+
+
+        $myPosts = Post::all()
+            ->where('author_id' , '==', Auth::id());
+
+        return view('home')->with('success', 'Post has been created successfully!')->with('myPosts', $myPosts);
     }
 
 
