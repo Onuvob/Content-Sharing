@@ -15,8 +15,6 @@
 
 
 
-
-
     @if( count($myPosts) > 0)
 
         @foreach($myPosts as $post)
