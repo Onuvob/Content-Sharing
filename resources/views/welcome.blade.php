@@ -56,6 +56,10 @@
                 text-transform: uppercase;
             }
 
+            .alert-height{
+                margin-bottom: 100px;
+            }
+
 
         </style>
     </head>
@@ -76,6 +80,12 @@
             @endif
         </div>
 
+        @if(isset($success))
+            <div class="alert alert-success alert-height">
+                {{ $success }}
+            </div>
+        @endif
+
         @if( count($posts) > 0)
 
             @foreach($posts as $key => $post)
@@ -88,7 +98,9 @@
                         </div>
                         <div class="card-body">
                             <p class="card-text">{{ $post->body }}</p>
-                            <a href="#" class="btn btn-primary">View Details</a>
+
+{{--                            <a href="/post-details/{{ $post->id }}/{{ $post->title }}/{{ $post->body }}/{{ $post->created_at }}" class="btn btn-primary">View Details</a>--}}
+                            <a href="/post-details/{{ $post->id }}" class="btn btn-primary">View Details</a>
                         </div>
                         <div class="card-footer">
                             <span class="text-muted">created at: </span> {{ $post->created_at }}

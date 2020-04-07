@@ -41,7 +41,7 @@ class PostController extends Controller
 
     public function show(Post $post)
     {
-        //
+        return view('post_view')->with('post', $post);
     }
 
 
@@ -59,6 +59,8 @@ class PostController extends Controller
 
     public function destroy(Post $post)
     {
-        //
+        Post::destroy($post->id);
+
+        return redirect('/')->with('success', 'Post has been deleted!');
     }
 }
