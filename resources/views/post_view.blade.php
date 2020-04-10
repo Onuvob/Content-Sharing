@@ -3,6 +3,8 @@
 @section('content')
     <div class="container">
 
+
+
                 <div class="text-center">
                     <h2>Post Details</h2>
                 </div>
@@ -30,7 +32,7 @@
                 @if(Auth::id() == $post->author_id)
                     <div class="row text-center">
                             <div class="col-md-6">
-                                <a href="/post-details/{{ $post->id }}" class="btn btn-info">Edit</a>
+                                <a href="/posts/{{ $post->id }}/edit" class="btn btn-info">Edit</a>
                             </div>
                             <div class="col-md-6">
                                 <a href="/post-delete/{{ $post->id }}" class="btn btn-danger">Delete</a>

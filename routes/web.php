@@ -13,6 +13,10 @@ Route::post('/store-post', 'Post\PostController@store');
 Route::get('/post-details/{post}', 'Post\PostController@show');
 Route::get('/post-delete/{post}', 'Post\PostController@destroy');
 
+Route::post('/update-post/{post}', 'Post\PostController@update');
+
+Route::get('/posts/{post}/edit', 'Post\PostController@edit');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

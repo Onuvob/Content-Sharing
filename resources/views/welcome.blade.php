@@ -63,7 +63,7 @@
 
         </style>
     </head>
-    <body>
+    <body class="container">
         <div class="flex-center position-ref">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -83,6 +83,12 @@
         @if(isset($success))
             <div class="alert alert-success alert-height">
                 {{ $success }}
+            </div>
+        @endif
+
+        @if(session()->has('success'))
+            <div class="alert alert-success alert-height mt-5">
+                {{ session()->get('success') }}
             </div>
         @endif
 
