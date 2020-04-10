@@ -12,7 +12,7 @@ class PostController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->except('show');
     }
 
 
@@ -41,24 +41,35 @@ class PostController extends Controller
 
     public function show(Post $post)
     {
-        //
+        return view('post_view')->with('post', $post);
     }
 
 
     public function edit(Post $post)
     {
-        //
+        return view('post.update-post')->with('post', $post);
     }
 
 
     public function update(Request $request, Post $post)
     {
-        //
+        $post = Post::find($post->id);
+        $post->update($request->all());
+//        $post = Post::find($post->id);
+//
+//        $post->title = $request->input('title');
+//        $post->body = $request->input('body');
+//
+//        $post->save();
+
+        return redirect()->back()->with('success', 'Post has been updated successfully!')->with('post', $post);
     }
 
 
     public function destroy(Post $post)
     {
-        //
+        Post::destroy($post->id);
+
+        return redirect('/')->with('success', 'Post has been deleted!');
     }
 }
